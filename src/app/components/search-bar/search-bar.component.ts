@@ -13,7 +13,10 @@ export class SearchBarComponent{
 
   seachControl = new FormControl('', [Validators.required]);
 
-  onSubmit() {  // form submit
+  /**
+   * form submit
+   */
+  onSubmit() { 
     if (this.seachControl.valid && this.seachControl.value)
       this.onQuery.emit(this.seachControl.value);
   }

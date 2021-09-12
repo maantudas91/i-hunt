@@ -18,6 +18,9 @@ export class ImageGalleryComponent implements OnChanges, OnDestroy {
   errorText: string = '';
   private apiSub = new Subscription();
 
+  /**
+   * hits when query input data changes
+   */
   ngOnChanges() {
     if (this.query) {
       this.apiSub = this.apiService.getImages(this.query).subscribe(
@@ -33,6 +36,9 @@ export class ImageGalleryComponent implements OnChanges, OnDestroy {
     }
   }
 
+  /**
+   * starting infinite call
+   */
   onScrollEnd() {
     this.page++;
     if (this.page <= this.totalPages) {
