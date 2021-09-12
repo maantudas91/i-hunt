@@ -6,9 +6,6 @@
 .card-inner {
     position: relative;
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
@@ -16,7 +13,7 @@
     border: none;
     cursor: pointer;
     transition: all 2s;
-    height : 250px;
+    // height : 250px;
 }
 
 .card-inner:hover {
@@ -51,9 +48,9 @@ img{
 }
 
 .card-inner img{
-    /* height: 200Px; */
-    height: 100%;
-    object-fit: scale-down;
+    height: 200Px; 
+    //height: 100%;
+    object-fit: cover;
 }
 
 .empty{
