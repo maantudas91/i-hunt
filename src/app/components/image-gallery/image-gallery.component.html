@@ -1,0 +1,27 @@
+<ng-container *ngIf="photos.length > 0; else nothingFound">
+
+<div
+  class="product-list row"
+  infiniteScroll
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScrollEnd()"
+>
+  <div class="col-md-3 col-sm-6 px-0" *ngFor="let photo of photos">
+
+    <div class="card-inner p-2 d-flex flex-row align-items-center"> <img
+        src="{{ photo.urls.small }}"
+        alt="{{ photo.alt_description }}"
+        title="{{ photo.alt_description }}"
+      />
+        <!-- <div class="text-center mg-text"> <span class="mg-text">{{ photo.alt_description }}</span> </div> -->
+    </div>
+ 
+  </div>
+</div>
+</ng-container>
+<ng-template #nothingFound>
+    <div *ngIf="query" class="nothingFound">
+      <div class="empty"><img src="/assets/images/empty_state.png" alt="nothing found"/></div>
+      <h3 class="heading text-center">{{ errorText ? errorText : 'Nothing found..Please refine search....'}}</h3>
+    </div>
+</ng-template>
